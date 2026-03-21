@@ -1,0 +1,84 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/assets/images
+public_folder: /assets/images
+
+publish_mode: editorial_workflow
+
+collections:
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/settings/hero.json"
+        fields:
+          - { label: "Tagline",     name: "tagline",     widget: "string" }
+          - { label: "Headline",    name: "headline",    widget: "text" }
+          - { label: "Subheadline", name: "subheadline", widget: "text" }
+          - { label: "Intro",       name: "intro",       widget: "text" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num",   widget: "string" }
+              - { label: "Label",  name: "label", widget: "string" }
+
+      - name: "about"
+        label: "About Section"
+        file: "content/settings/about.json"
+        fields:
+          - label: "Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "text", widget: "text" }
+          - label: "Roles"
+            name: "roles"
+            widget: "list"
+            fields:
+              - { label: "Company",  name: "company",  widget: "string" }
+              - { label: "Title",    name: "title",    widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "School", name: "school", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Section"
+        file: "content/settings/contact.json"
+        fields:
+          - { label: "Email",    name: "email",    widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Status",   name: "status",   widget: "string" }
+
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Number (e.g. 01)", name: "num",         widget: "string" }
+      - { label: "Title",            name: "title",       widget: "string" }
+      - { label: "Description",      name: "description", widget: "text" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "URL / Slug",     name: "url",   widget: "string", default: "#" }
+      - { label: "Body Content",   name: "body",  widget: "markdown", required: false }
+
+  - name: "principles"
+    label: "Design Principles"
+    folder: "content/principles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title",       name: "title",       widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Nishant Ghadge — Senior UX Designer at Amazon with 20 years of experience designing enterprise platforms and customer-facing products used by millions worldwide." />
+<meta name="author" content="Nishant Ghadge" />
+<meta property="og:title" content="Nishant Ghadge — UX Designer" />
+<meta property="og:description" content="Senior UX Designer at Amazon. Designing systems that simplify complex, real-world problems at global scale." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nishantghadge.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<title>Nishant Ghadge — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Nishant Ghadge</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Toggle menu" id="menuToggle">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#work" class="mobile-link">Work</a></li>
+    <li><a href="#about" class="mobile-link">About</a></li>
+    <li><a href="#principles" class="mobile-link">Principles</a></li>
+    <li><a href="#contact" class="mobile-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left reveal">
+    <div class="hero-label">Senior UX Designer</div>
+    <h1 class="hero-headline">
+      I design systems that simplify
+      <em>complex, real-world problems</em>
+      at global scale.
+    </h1>
+    <p class="hero-sub">
+      Senior UX Designer at Amazon with ~20 years of experience across enterprise platforms and customer-facing products used by millions worldwide.
+    </p>
+    <a href="#work" class="hero-cta">View selected work →</a>
+  </div>
+  <div class="hero-right reveal" style="transition-delay:0.15s">
+    <p class="hero-intro">
+      My work focuses on transforming complex workflows into intuitive, human-centered experiences. I've spent over a decade at Amazon designing systems across delivery, logistics, and financial platforms.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">20</div><div class="hero-stat-label">Years experience</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">13+</div><div class="hero-stat-label">Years at Amazon</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">M+</div><div class="hero-stat-label">Users impacted</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Patents filed</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Case Studies</h2>
+    </div>
+    <span class="section-count" id="cs-count">3 projects</span>
+  </div>
+  <div class="case-studies" id="case-studies-list">
+    <!-- Injected by JS from content/case-studies -->
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-left reveal">
+      <div class="section-label about-label">About</div>
+      <h2 class="about-headline">Designing for complexity<br>is a <em>discipline</em>.</h2>
+      <div class="about-body" id="about-body">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+    <div class="about-right reveal" style="transition-delay:0.15s">
+      <div class="about-roles" id="about-roles"><!-- Injected by JS --></div>
+      <div class="about-edu" id="about-edu"><!-- Injected by JS --></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="container">
+    <div class="section-header reveal" style="padding:0">
+      <div>
+        <div class="section-label">Philosophy</div>
+        <h2 class="section-title">How I think about design</h2>
+      </div>
+    </div>
+  </div>
+  <div class="principles-grid" id="principles-grid"><!-- Injected by JS --></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-label contact-label">Contact</div>
+      <h2 class="contact-headline">Let's talk design.</h2>
+      <p class="contact-sub">I'm always interested in conversations about design, systems thinking, and building meaningful products.</p>
+    </div>
+    <div class="contact-links reveal" style="transition-delay:0.12s" id="contact-links"><!-- Injected by JS --></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Nishant Ghadge</span>
+  <span class="footer-note">Senior UX Designer · Seattle, WA · <span id="footer-year"></span></span>
+</footer>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
