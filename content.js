@@ -8,7 +8,7 @@ window.SITE_CONTENT = {
     tagline: "Senior UX Designer",
     headline: "I design systems that simplify <em>complex, real-world problems</em> at global scale.",
     subheadline: "Senior UX Designer at Amazon with 20+ years of experience across enterprise platforms and customer-facing products used by millions worldwide.",
-    intro: "My work focuses on transforming complex workflows into intuitive, human-centered experiences. I've spent over a decade at Amazon designing systems across delivery, logistics, and financial platforms—from Amazon Lockers to large-scale internal financial systems.",
+    intro: "My work focuses on transforming complex workflows into intuitive, human-centered experiences. I've spent over a decade at Amazon designing systems across delivery, logistics, and financial platforms—ranging from customer experiences like Amazon Lockers to internal financial systems at massive scale.",
     stats: [
       { num: "20+",    label: "Years experience" },
       { num: "13+",    label: "Years at Amazon" },
@@ -110,7 +110,7 @@ window.SITE_CONTENT = {
     {
       num: "02",
       title: "End-to-End Balance Sheet Reconciliation",
-      description: "Redesigned reconciliation workflows for systems processing 1.53T+ journal lines annually — replacing fragmented manual processes with a unified, scalable system that reduced 200K+ hours of manual effort per year.",
+      description: "Redesigned reconciliation workflows for systems processing 1.53T+ journal lines annually — replacing fragmented manual processes with a unified, scalable system that addressed 200K+ hours of manual effort per year.",
       tags: ["Enterprise UX", "Workflow Design", "Finance"],
       image: "",
       url: "case-study.html?id=1",
@@ -365,6 +365,184 @@ window.SITE_CONTENT = {
         { title: "Integration drives efficiency", desc: "Connecting workflows eliminates context switching, redundant effort, and the hidden cost of tool fragmentation." },
         { title: "UX can shape ecosystems", desc: "Design plays a critical role in aligning systems, teams, and experiences — not just screens — at the organizational level." }
       ]
+    },
+
+    {
+      num: "05",
+      title: "Amazon Locker Accessibility",
+      description: "Redesigned the Amazon Locker kiosk and digital experience to be fully accessible — improving pickup and return flows for customers with visual, motor, and cognitive disabilities across thousands of locations worldwide.",
+      tags: ["Accessibility", "Customer Experience", "Retail"],
+      image: "",
+      url: "case-study.html?id=4",
+
+      overview: "Amazon Lockers serve millions of customers as a secure, convenient alternative to home delivery. As Lead UX Designer for Lockers and Pickup, I led an initiative to identify and eliminate accessibility barriers across the end-to-end Locker experience — spanning digital surfaces, physical kiosk interactions, and location discovery — so that every customer, regardless of ability, could use Lockers with confidence and independence.",
+
+      problem: {
+        intro: "Amazon Lockers were widely adopted but not equally accessible. Customers with visual impairments, limited mobility, or cognitive disabilities faced significant barriers at both the digital and physical touchpoints — from finding a nearby Locker to completing a pickup or return at the kiosk.",
+        bullets: [
+          "Kiosk interfaces lacked screen reader support and sufficient contrast for low-vision users",
+          "Physical kiosk placement and height created barriers for wheelchair users",
+          "Locker discovery flows in the app and website were difficult to navigate non-visually",
+          "Return and pickup workflows required fine motor precision that excluded many users",
+          "No consistent accessibility standard applied across thousands of global Locker locations"
+        ]
+      },
+
+      scale: [
+        "Tens of thousands of Amazon Locker locations across multiple countries",
+        "Millions of customers using Lockers monthly for delivery and returns",
+        "Accessibility improvements applied across app, website, and physical kiosk surfaces",
+        "Aligned with ADA, WCAG 2.1 AA, and Amazon's internal accessibility standards"
+      ],
+
+      role: [
+        "Lead UX designer for Amazon Lockers and Pickup accessibility initiative",
+        "Conducted accessibility audits across digital and physical touchpoints",
+        "Partnered with accessibility specialists, engineering, and operations teams",
+        "Defined inclusive design standards applied across the Locker ecosystem"
+      ],
+
+      challenges: [
+        { title: "Multi-surface complexity", desc: "Accessibility issues spanned digital (app, web), physical (kiosk hardware), and environmental (location placement) surfaces — requiring coordinated solutions across very different teams." },
+        { title: "Kiosk constraints", desc: "Physical kiosk hardware had significant design constraints — changes required hardware updates, software deployments, and operations coordination at massive scale." },
+        { title: "Inconsistent standards", desc: "No unified accessibility standard existed across Locker locations — creating a fragmented and unpredictable experience for customers with disabilities." },
+        { title: "Discoverability gaps", desc: "Customers using assistive technology struggled to find and evaluate accessible Locker locations through Amazon's discovery surfaces." },
+        { title: "Testing at scale", desc: "Validating accessibility improvements across thousands of physical locations required creative approaches to research and quality assurance." }
+      ],
+
+      approach: [
+        { title: "End-to-End Accessibility Audit", body: "Conducted a comprehensive audit across all Locker touchpoints — app discovery, website flows, kiosk UI, and physical placement — to identify and prioritize the highest-impact barriers for customers with disabilities." },
+        { title: "Inclusive Research & Co-Design", body: "Engaged customers with visual, motor, and cognitive disabilities throughout the design process — running moderated sessions with assistive technology users to ground decisions in real-world experience, not assumptions." },
+        { title: "Kiosk Interface Redesign", body: "Redesigned kiosk UI for screen reader compatibility, improved touch target sizing, higher contrast ratios, and simplified interaction flows — reducing cognitive load and enabling independent use for a broader range of customers." },
+        { title: "Discovery Surface Improvements", body: "Improved Locker location discovery across app and web — adding accessibility attributes (step-free access, kiosk height), improving filter and map interactions for assistive technology, and ensuring screen reader compatibility throughout." },
+        { title: "Accessibility Standards & Governance", body: "Defined and documented accessibility requirements for Locker experiences, establishing a repeatable evaluation framework applied to new locations and future kiosk generations." }
+      ],
+
+      solution: "A systematically more accessible Amazon Locker experience — with improved kiosk interfaces, enhanced digital discovery for assistive technology users, clearer accessibility attributes on location listings, and a defined standard ensuring future Locker deployments meet inclusive design requirements.",
+      flow: "Location Discovery → Accessible Filtering → Kiosk Arrival → Accessible Pickup / Return → Confirmation",
+
+      impact: [
+        {
+          title: "Customer Experience",
+          items: [
+            "Significantly reduced barriers for customers using screen readers and assistive technology",
+            "Improved kiosk usability for customers with low vision, motor impairments, and cognitive disabilities",
+            "Made Locker location discovery reliably accessible across app and website surfaces"
+          ]
+        },
+        {
+          title: "Scale & Standards",
+          items: [
+            "Accessibility improvements deployed across thousands of Locker locations globally",
+            "Established inclusive design standards applied to future Locker hardware and software",
+            "Aligned Locker experience with WCAG 2.1 AA and ADA requirements"
+          ]
+        },
+        {
+          title: "Organizational Impact",
+          items: [
+            "Created a repeatable accessibility evaluation framework adopted across the Locker program",
+            "Increased internal awareness of accessibility as a product quality requirement, not a compliance checkbox",
+            "Strengthened Amazon's commitment to building inclusive delivery experiences for all customers"
+          ]
+        }
+      ],
+
+      takeaways: [
+        { title: "Accessibility requires system-level thinking", desc: "Solving for one surface isn't enough. Real inclusion requires coordinated improvements across digital, physical, and environmental touchpoints." },
+        { title: "Real users reveal real barriers", desc: "Research with customers using assistive technology surfaced critical issues that internal audits alone could never catch — it is irreplaceable." },
+        { title: "Standards prevent regression", desc: "Without a defined and enforced accessibility standard, improvements erode over time. Governance is as important as the design itself." },
+        { title: "Inclusion benefits everyone", desc: "Many accessibility improvements — clearer contrast, simpler flows, larger touch targets — measurably improved the experience for all customers, not just those with disabilities." }
+      ]
+    },
+
+    {
+      num: "06",
+      title: "Amazon Locker Redirects & Delivery Recovery",
+      description: "Designed the delivery recovery experience for Amazon Lockers — enabling customers to redirect failed or at-risk deliveries to nearby Locker locations, improving delivery success rates and customer satisfaction at scale.",
+      tags: ["Customer Experience", "Logistics UX", "Retail"],
+      image: "",
+      url: "case-study.html?id=5",
+
+      overview: "Failed deliveries are one of the most frustrating customer experiences in e-commerce — and one of the most costly for Amazon's logistics operations. As Lead UX Designer for Amazon Lockers and Pickup, I led the design of a proactive delivery recovery system that detects at-risk deliveries and empowers customers to redirect packages to a nearby Amazon Locker — turning a failed delivery into a successful one.",
+
+      problem: {
+        intro: "A significant volume of Amazon deliveries failed on the first attempt — due to customers being away from home, access issues, or address problems. These failures created frustration for customers, increased redelivery costs for Amazon, and added complexity to an already high-scale logistics operation.",
+        bullets: [
+          "Failed first-attempt deliveries drove significant customer dissatisfaction and contacts to customer service",
+          "Redelivery and returns processing added substantial cost to logistics operations at scale",
+          "Customers had no proactive way to redirect at-risk packages before a failed delivery occurred",
+          "Locker locations were underutilized despite being a well-suited solution for delivery recovery",
+          "Discovery of nearby Lockers during the delivery window was fragmented and difficult"
+        ]
+      },
+
+      scale: [
+        "Millions of deliveries managed daily across Amazon's global logistics network",
+        "Tens of thousands of Amazon Locker locations available for delivery recovery",
+        "Redirect experience integrated across app, website, and delivery notification surfaces",
+        "Impact measured across delivery success rates, customer contacts, and logistics cost"
+      ],
+
+      role: [
+        "Lead UX designer for Locker delivery recovery and redirect experience",
+        "Defined the end-to-end redirect flow from notification to Locker confirmation",
+        "Partnered with logistics, engineering, and customer experience teams",
+        "Drove design of proactive notification and location discovery systems"
+      ],
+
+      challenges: [
+        { title: "Time sensitivity", desc: "The redirect window was narrow — customers needed to act quickly once a delivery was flagged as at-risk, requiring a fast, low-friction experience that worked under time pressure." },
+        { title: "Discovery complexity", desc: "Surfacing the right nearby Locker — accounting for capacity, proximity, customer preference, and delivery timing — required sophisticated logic presented simply." },
+        { title: "Trust & clarity", desc: "Customers needed to understand exactly what would happen to their package, when it would arrive at the Locker, and how to retrieve it — with full confidence and no ambiguity." },
+        { title: "Multi-surface coordination", desc: "The redirect experience needed to work seamlessly across push notifications, email, the Amazon app, and the website — each with different constraints and user contexts." },
+        { title: "Logistics integration", desc: "Redirects required real-time coordination with delivery routing systems — the UX had to reflect actual availability and constraints without exposing unnecessary complexity to customers." }
+      ],
+
+      approach: [
+        { title: "Proactive Notification Design", body: "Designed a clear, timely notification system that surfaced delivery risk early — giving customers enough time to redirect without panic, while setting accurate expectations about the redirect process and timeline." },
+        { title: "Simplified Locker Discovery", body: "Built a streamlined, contextual Locker selection experience surfaced directly within the redirect flow — showing nearby available locations with relevant information (distance, hours, capacity) without overwhelming customers with unnecessary detail." },
+        { title: "Transparent Confirmation & Tracking", body: "Ensured customers had complete clarity post-redirect — including updated delivery estimates, Locker access instructions, and real-time tracking — so the redirect felt like a solution, not a downgrade." },
+        { title: "Cross-Surface Consistency", body: "Designed the redirect experience to work consistently and reliably across all customer surfaces — push notification, email, app, and web — ensuring no customer fell through the cracks regardless of how they engaged." },
+        { title: "Edge Case & Error Design", body: "Mapped and designed for critical edge cases — Locker at capacity, redirect window expired, ineligible items — ensuring every failure state gave customers a clear path forward and maintained trust." }
+      ],
+
+      solution: "A proactive delivery recovery system that detects at-risk deliveries, notifies customers with enough lead time to act, and provides a fast, clear, and trustworthy experience for redirecting packages to a nearby Amazon Locker — improving delivery success rates while reducing logistics cost and customer effort.",
+      flow: "Delivery Risk Detected → Customer Notification → Locker Selection → Redirect Confirmed → Pickup at Locker",
+
+      impact: [
+        {
+          title: "Customer Experience",
+          items: [
+            "Improved delivery success rates by enabling proactive redirection before failure",
+            "Reduced customer frustration and contacts associated with failed deliveries",
+            "Gave customers control and confidence over an experience previously outside their influence"
+          ]
+        },
+        {
+          title: "Logistics & Operations",
+          items: [
+            "Reduced redelivery and returns processing costs at scale",
+            "Improved Locker utilization across the delivery network",
+            "Enabled more efficient last-mile delivery routing for recovered packages"
+          ]
+        },
+        {
+          title: "Platform & Scale",
+          items: [
+            "Redirect experience deployed across app, web, and notification surfaces",
+            "Supported millions of customers across Amazon's global delivery network",
+            "Established a reusable delivery recovery design pattern applicable to future programs"
+          ]
+        }
+      ],
+
+      takeaways: [
+        { title: "Proactive design reduces failure cost", desc: "Giving customers the tools to prevent a bad experience is far more effective — and less costly — than recovering from one after the fact." },
+        { title: "Time pressure demands simplicity", desc: "When customers need to act quickly, every unnecessary step, word, or decision is a barrier. The redirect flow had to be ruthlessly simple." },
+        { title: "Trust is built through transparency", desc: "Customers accept inconvenience when they have full clarity about what's happening, why, and what to expect next. Ambiguity at moments of disruption destroys trust." },
+        { title: "UX directly impacts logistics economics", desc: "Improving the redirect experience wasn't just a customer satisfaction win — it measurably reduced operational cost at a scale where small improvements have significant financial impact." }
+      ]
     }
   ],
 
@@ -372,8 +550,8 @@ window.SITE_CONTENT = {
     paragraphs: [
       "I'm a UX designer with nearly two decades of experience designing enterprise platforms and large-scale customer experiences. My work focuses on simplifying complex systems, aligning business and technology goals, and creating intuitive, scalable solutions.",
       "At Amazon, I've spent over 13 years designing both customer-facing and internal products. I led UX design for Amazon Lockers and Pickup, improving delivery recovery, returns, accessibility, and location discovery for millions of customers worldwide.",
-      "More recently, I lead UX for Amazon's AFFS (Amazon Financial Foundation System), designing tools used by business, accounting, and technology teams to manage complex financial workflows at global scale.",
-      "Before Amazon, I worked at SAP designing enterprise products including SAP Solution Manager, Sybase Control Center, and NetWeaver Administrator. I hold a Master's in Design from IIT Bombay and a Bachelor's in Computer Engineering."
+      "More recently, I lead UX for Amazon's AFFS (Amazon Financial Foundation System), where I design tools used by business, accounting, and technology teams to manage complex financial workflows at scale.",
+      "Before Amazon, I worked at SAP designing enterprise products such as SAP Solution Manager, Sybase Control Center, and NetWeaver Administrator. I hold a Master's degree in Design from IIT Bombay and a Bachelor's degree in Computer Engineering."
     ],
     roles: [
       { company: "Amazon", title: "Lead UX Designer — AFFS Financial Platform", duration: "Current" },
