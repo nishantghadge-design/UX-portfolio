@@ -543,6 +543,93 @@ window.SITE_CONTENT = {
         { title: "Trust is built through transparency", desc: "Customers accept inconvenience when they have full clarity about what's happening, why, and what to expect next. Ambiguity at moments of disruption destroys trust." },
         { title: "UX directly impacts logistics economics", desc: "Improving the redirect experience wasn't just a customer satisfaction win — it measurably reduced operational cost at a scale where small improvements have significant financial impact." }
       ]
+    },
+
+    {
+      num: "07",
+      title: "Designing an AI-Native SaaS for Dance Class Management",
+      description: "A curiosity-driven experiment in AI-first product development — building a fully functional SaaS platform end-to-end using AI-assisted workflows, and bringing those learnings back to professional practice.",
+      tags: ["AI-First Design", "SaaS", "Personal Project"],
+      image: "",
+      url: "case-study.html?id=6",
+
+      overview: "As part of my commitment to continuously evolve as a designer, I explored how AI is transforming the way products are designed and built. What began as a curiosity-driven experiment in AI-assisted development quickly evolved into a fully functional SaaS platform for managing dance classes — challenging me to rethink traditional design workflows and experience firsthand how AI can accelerate and reshape the product development process.",
+
+      problem: {
+        intro: "Dance schools and independent instructors typically rely on a fragmented mix of tools and manual processes to run their operations — creating unnecessary overhead and friction for both instructors and students.",
+        bullets: [
+          "Class scheduling managed through general-purpose calendars not built for this workflow",
+          "Student enrollment tracked in spreadsheets with no real-time visibility",
+          "Payments handled through disconnected tools with poor reconciliation",
+          "Communication between instructors and students fragmented across multiple channels",
+          "No unified platform purpose-built for the operational needs of a dance school"
+        ]
+      },
+
+      scale: [
+        "Built end-to-end as a solo project using AI-assisted development",
+        "Fully functional SaaS with class scheduling, enrollment, payments, and admin dashboard",
+        "Completed in a fraction of the time traditional development would require",
+        "Learnings directly applied to AI workflow exploration in professional practice"
+      ],
+
+      role: [
+        "Solo designer and product owner for the full end-to-end experience",
+        "Defined product strategy, information architecture, and interaction design",
+        "Used AI tools throughout design, prototyping, and implementation",
+        "Iterated in real time — collapsing the traditional design-to-development gap"
+      ],
+
+      challenges: [
+        { title: "Learning while building", desc: "This was a deliberate stretch — simultaneously learning AI-first development workflows while making real product decisions, without a team or established process to rely on." },
+        { title: "Design decisions at development speed", desc: "AI-assisted development moves fast. Design thinking had to keep pace — requiring more upfront clarity on structure, flows, and intent before prompting." },
+        { title: "Maintaining quality without a traditional process", desc: "Without handoffs, reviews, or a team, maintaining design coherence and product quality required discipline and continuous self-critique." },
+        { title: "Knowing when to direct vs. accept AI output", desc: "AI generates quickly, but good outcomes require clear intent, constraint, and judgment. Learning when to guide and when to refine was a skill in itself." }
+      ],
+
+      approach: [
+        { title: "AI-First Workflow Exploration", body: "Rather than using AI to assist a traditional process, I inverted the model — starting with prompts, generating working implementations, and refining from a real product, not a static mockup. This fundamentally changed how design decisions were made and sequenced." },
+        { title: "Systems Thinking as the Foundation", body: "Before prompting anything, I mapped the core workflows: class scheduling, enrollment, payment, and communication. Good system structure proved to be the most important input — AI amplified clarity but exposed any gaps in thinking immediately." },
+        { title: "Rapid Iteration in Real Time", body: "The collapsed design-development cycle enabled a much tighter feedback loop. Ideas could be tested against a working product within minutes — making iteration more concrete, grounded, and honest than prototyping alone." },
+        { title: "Intentional Reflection", body: "Throughout the project, I documented what was working, what AI couldn't replace, and where design judgment remained irreplaceable. The goal was not just to ship — but to return from the experiment with transferable insight." }
+      ],
+
+      solution: "A fully functional, AI-native SaaS platform for dance class management — with class scheduling and calendar management, student enrollment and tracking, instructor and class administration, and an operational dashboard. Built end-to-end using AI-assisted workflows, with every design decision made and validated in a live product environment.",
+      flow: "Prompt → Generate → Evaluate → Refine → Test → Ship → Reflect",
+
+      impact: [
+        {
+          title: "Product Outcomes",
+          items: [
+            "Built a fully functional SaaS platform end-to-end as a solo project",
+            "Demonstrated that strong design thinking dramatically improves AI-generated output quality",
+            "Shipped a working product in a fraction of the time traditional development requires"
+          ]
+        },
+        {
+          title: "Personal & Professional Growth",
+          items: [
+            "Developed hands-on fluency with AI-first product development workflows",
+            "Gained direct experience with the speed, constraints, and opportunities of AI-assisted design",
+            "Reinforced that systems thinking and design judgment remain the irreplaceable core of the craft"
+          ]
+        },
+        {
+          title: "Learnings Applied to Practice",
+          items: [
+            "Brought faster iteration and AI workflow thinking into professional design work",
+            "Identified new opportunities for AI-assisted workflows in enterprise UX",
+            "Strengthened conviction that curiosity and active learning are critical to staying relevant"
+          ]
+        }
+      ],
+
+      takeaways: [
+        { title: "Curiosity drives growth", desc: "Actively building with new technologies is far more valuable than passively observing them. The experiment surfaced insights that no amount of reading could have provided." },
+        { title: "Systems thinking matters even more with AI", desc: "AI amplifies what you bring to it. Clear structure, good judgment, and strong intent are prerequisites — not optional — for high-quality AI-assisted outcomes." },
+        { title: "Speed changes the design process", desc: "When the gap between idea and implementation collapses, design becomes more fluid, more honest, and more iterative. Traditional design stage gates are challenged in meaningful ways." },
+        { title: "AI requires direction, not just prompts", desc: "The quality of AI output depends entirely on the clarity of intent behind the input. Strong design thinking is what separates good AI-assisted products from mediocre ones." }
+      ]
     }
   ],
 
