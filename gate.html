@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nishant Ghadge — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0f0f0e;
+    --paper: #f5f3ee;
+    --accent: #c85a2a;
+    --ink-mid: #4a4a45;
+    --ink-soft: #8a8a82;
+    --border: rgba(15,15,14,0.1);
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --serif: 'DM Serif Display', Georgia, serif;
+  }
+  html, body {
+    height: 100%;
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  .gate-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .gate-logo {
+    font-family: var(--sans);
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    color: rgba(245,243,238,0.5);
+    margin-bottom: 3rem;
+  }
+  .gate-card {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .gate-title {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--paper);
+  }
+  .gate-subtitle {
+    font-size: 0.85rem;
+    color: rgba(245,243,238,0.45);
+    letter-spacing: 0.02em;
+    margin-top: -0.75rem;
+  }
+  .gate-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .gate-field label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,243,238,0.4);
+  }
+  .gate-field input {
+    background: rgba(245,243,238,0.05);
+    border: 1px solid rgba(245,243,238,0.12);
+    border-radius: 3px;
+    color: var(--paper);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .gate-field input:focus {
+    border-color: rgba(245,243,238,0.35);
+  }
+  .gate-field input::placeholder {
+    color: rgba(245,243,238,0.2);
+  }
+  .gate-btn {
+    background: var(--accent);
+    border: none;
+    border-radius: 3px;
+    color: var(--paper);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 0.85rem 1.5rem;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    width: 100%;
+  }
+  .gate-btn:hover { opacity: 0.85; }
+  .gate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .gate-error {
+    font-size: 0.8rem;
+    color: #e07050;
+    text-align: center;
+    min-height: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+  .gate-footer {
+    margin-top: 4rem;
+    font-size: 0.72rem;
+    color: rgba(245,243,238,0.2);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="gate-wrap">
+  <div class="gate-logo">Nishant Ghadge</div>
+
+  <div class="gate-card">
+    <div>
+      <h1 class="gate-title">Portfolio Access</h1>
+      <p class="gate-subtitle">This portfolio is password protected.</p>
+    </div>
+
+    <div class="gate-field">
+      <label for="pw">Password</label>
+      <input type="password" id="pw" placeholder="Enter password" autocomplete="current-password" />
+    </div>
+
+    <div class="gate-error" id="gate-error"></div>
+
+    <button class="gate-btn" id="gate-btn">Enter</button>
+  </div>
+
+  <div class="gate-footer">Seattle, WA &nbsp;·&nbsp; nishantghadge@gmail.com</div>
+</div>
+
+<script>
+(function () {
+  var HASH = 'ff40b6f558fcd4e5be53d7b737b0f90fbd67fb0e2474c9ff0053772d1d12354e';
+  var SESSION_KEY = 'ng_portfolio_auth';
+
+  // Already authenticated — go straight in
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    window.location.replace('index.html');
+    return;
+  }
+
+  function hexFromBuffer(buf) {
+    return Array.from(new Uint8Array(buf))
+      .map(function (b) { return b.toString(16).padStart(2, '0'); })
+      .join('');
+  }
+
+  async function attempt() {
+    var pw = document.getElementById('pw').value;
+    if (!pw) return;
+
+    var btn = document.getElementById('gate-btn');
+    var err = document.getElementById('gate-error');
+    btn.disabled = true;
+    err.textContent = '';
+
+    try {
+      var enc = new TextEncoder().encode(pw);
+      var hashBuf = await crypto.subtle.digest('SHA-256', enc);
+      var hex = hexFromBuffer(hashBuf);
+
+      if (hex === HASH) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        var dest = new URLSearchParams(window.location.search).get('next') || 'index.html';
+        window.location.replace(dest);
+      } else {
+        err.textContent = 'Incorrect password. Please try again.';
+        btn.disabled = false;
+        document.getElementById('pw').select();
+      }
+    } catch (e) {
+      err.textContent = 'Something went wrong. Please try again.';
+      btn.disabled = false;
+    }
+  }
+
+  document.getElementById('gate-btn').addEventListener('click', attempt);
+  document.getElementById('pw').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') attempt();
+  });
+})();
+</script>
+</body>
+</html>
