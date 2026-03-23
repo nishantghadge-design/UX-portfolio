@@ -299,8 +299,8 @@ body {
 
 .about-photo-wrap {
   margin-bottom: 2.5rem;
-  width: 96px;
-  height: 96px;
+  width: 192px;
+  height: 192px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--accent);
@@ -313,7 +313,8 @@ body {
   object-fit: cover;
   object-position: top center;
   display: block;
-  scale: 1.08;
+  scale: 1.25;
+  transform-origin: top center;
 }
 
 .role-item {
