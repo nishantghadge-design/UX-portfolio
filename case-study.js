@@ -28,7 +28,10 @@ function renderPage() {
   document.getElementById('cs-main-title').textContent  = cs.title;
   document.getElementById('cs-overview-text').textContent = cs.overview;
   document.getElementById('cs-tags-row').innerHTML =
-    cs.tags.map(t => '<span class="cs-tag">' + t + '</span>').join('');
+    cs.tags.map(t => '<span class="cs-tag">' + t + '</span>').join('') +
+    (cs.liveUrl
+      ? '<a href="' + cs.liveUrl + '" target="_blank" rel="noopener" class="cs-live-link">↗ View Live Site</a>'
+      : '');
 
   // Body
   document.getElementById('cs-content').innerHTML = buildContent(cs);

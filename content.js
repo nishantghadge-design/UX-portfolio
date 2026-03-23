@@ -547,13 +547,14 @@ window.SITE_CONTENT = {
 
     {
       num: "07",
-      title: "Designing an AI-Native SaaS for Dance Class Management",
-      description: "A curiosity-driven experiment in AI-first product development — building a fully functional SaaS platform end-to-end using AI-assisted workflows, and bringing those learnings back to professional practice.",
+      title: "ManchQ — AI-Native SaaS for Dance Class Management",
+      description: "A curiosity-driven experiment in AI-first product development — designing and building ManchQ, a fully functional SaaS platform for dance schools, end-to-end using AI-assisted workflows. Live at ManchQ.com.",
       tags: ["AI-First Design", "SaaS", "Personal Project"],
       image: "",
       url: "case-study.html?id=6",
+      liveUrl: "https://manchq.com",
 
-      overview: "As part of my commitment to continuously evolve as a designer, I explored how AI is transforming the way products are designed and built. What began as a curiosity-driven experiment in AI-assisted development quickly evolved into a fully functional SaaS platform for managing dance classes — challenging me to rethink traditional design workflows and experience firsthand how AI can accelerate and reshape the product development process.",
+      overview: "As part of my commitment to continuously evolve as a designer, I explored how AI is transforming the way products are designed and built. What began as a curiosity-driven experiment in AI-assisted development quickly evolved into ManchQ — a fully functional SaaS platform for managing dance classes, live at ManchQ.com. This project challenged me to rethink traditional design workflows and experience firsthand how AI can accelerate and reshape the product development process.",
 
       problem: {
         intro: "Dance schools and independent instructors typically rely on a fragmented mix of tools and manual processes to run their operations — creating unnecessary overhead and friction for both instructors and students.",
