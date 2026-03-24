@@ -169,7 +169,7 @@ body {
 }
 
 .hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--border); border: 1px solid var(--border); border-radius: 2px;
 }
 
