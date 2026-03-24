@@ -151,6 +151,45 @@ function initMobileMenu() {
   });
 }
 
+// ── CYCLING HERO TEXT ──
+function initCyclingText() {
+  const el = document.getElementById('heroCycle');
+  if (!el) return;
+
+  const traits = [
+    'Generalist',
+    '0→1 Designer',
+    'Design Thinker',
+    'Systems Designer',
+    'Visual Designer',
+    'Visual Communicator',
+    'Storyteller',
+    'Product Thinker'
+  ];
+
+  let index = 0;
+
+  function showNext() {
+    // Fade out
+    el.classList.remove('visible');
+
+    setTimeout(() => {
+      el.textContent = traits[index];
+      index = (index + 1) % traits.length;
+      // Fade in
+      el.classList.add('visible');
+    }, 480); // wait for fade-out to finish
+  }
+
+  // Show first trait immediately
+  el.textContent = traits[index];
+  index = 1;
+  setTimeout(() => el.classList.add('visible'), 100);
+
+  // Cycle every 2.4s
+  setInterval(showNext, 2400);
+}
+
 // ── FOOTER YEAR ──
 function setYear() {
   const el = document.getElementById('footer-year');
@@ -173,4 +212,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initNav();
   initMobileMenu();
+  initCyclingText();
 });
