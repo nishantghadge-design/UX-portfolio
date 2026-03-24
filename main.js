@@ -151,43 +151,56 @@ function initMobileMenu() {
   });
 }
 
-// ── CYCLING HERO TEXT ──
+// ── TYPEWRITER ──
 function initCyclingText() {
-  const el = document.getElementById('heroCycle');
+  const el = document.getElementById('heroTypewriter');
   if (!el) return;
 
-  const traits = [
-    'Generalist',
-    '0→1 Designer',
-    'Design Thinker',
-    'Systems Designer',
-    'Visual Designer',
-    'Visual Communicator',
-    'Storyteller',
-    'Product Thinker'
+  const words = [
+    'systems',
+    'financial tools',
+    'enterprise platforms',
+    'delivery experiences',
+    'AI workflows',
+    'end-to-end products'
   ];
 
-  let index = 0;
+  let wordIndex  = 0;
+  let charIndex  = 0;
+  let deleting   = false;
+  const typeSpeed   = 75;
+  const deleteSpeed = 40;
+  const holdPause   = 1800;
+  const nextPause   = 300;
 
-  function showNext() {
-    // Fade out
-    el.classList.remove('visible');
+  function tick() {
+    const current = words[wordIndex];
 
-    setTimeout(() => {
-      el.textContent = traits[index];
-      index = (index + 1) % traits.length;
-      // Fade in
-      el.classList.add('visible');
-    }, 480); // wait for fade-out to finish
+    if (!deleting) {
+      // Typing
+      charIndex++;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, holdPause);
+        return;
+      }
+    } else {
+      // Deleting
+      charIndex--;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(tick, nextPause);
+        return;
+      }
+    }
+
+    setTimeout(tick, deleting ? deleteSpeed : typeSpeed);
   }
 
-  // Show first trait immediately
-  el.textContent = traits[index];
-  index = 1;
-  setTimeout(() => el.classList.add('visible'), 100);
-
-  // Cycle every 2.4s
-  setInterval(showNext, 2400);
+  tick();
 }
 
 // ── FOOTER YEAR ──

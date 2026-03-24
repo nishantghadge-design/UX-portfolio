@@ -20,16 +20,18 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">Nishant Ghadge</a>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#principles">Principles</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-mobile-toggle" aria-label="Toggle menu" id="menuToggle">
-    <span></span><span></span>
-  </button>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Nishant Ghadge</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" id="menuToggle">
+      <span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- MOBILE MENU -->
@@ -47,14 +49,10 @@
   <div class="hero-left reveal">
     <div class="hero-label">Senior UX Designer</div>
     <h1 class="hero-headline">
-      I design systems that simplify
-      <em>complex, real-world problems</em>
+      I design <em><span id="heroTypewriter" class="typewriter-word"></span><span class="typewriter-cursor">|</span></em> that simplify
+      complex, real-world problems
       at global scale.
     </h1>
-    <div class="hero-cycle-wrap">
-      <span class="hero-cycle-prefix">Approach —</span>
-      <span class="hero-cycle-text" id="heroCycle"></span>
-    </div>
     <a href="#work" class="hero-cta">View selected work →</a>
   </div>
   <div class="hero-right reveal" style="transition-delay:0.15s">
