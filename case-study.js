@@ -2,7 +2,17 @@
 // CASE STUDY PAGE — Renderer
 // ─────────────────────────────────────────────
 
-const C = window.SITE_CONTENT;
+let C = {};
+
+async function loadContent() {
+  try {
+    const res = await fetch('/_data/content.json');
+    C = await res.json();
+  } catch(e) {
+    C = window.SITE_CONTENT || {};
+  }
+  renderPage();
+}
 
 function getIdx() {
   const p = new URLSearchParams(window.location.search);
@@ -193,4 +203,4 @@ function initReveal() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', renderPage);
+document.addEventListener('DOMContentLoaded', loadContent);

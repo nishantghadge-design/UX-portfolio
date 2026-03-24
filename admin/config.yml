@@ -1,0 +1,129 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: Assets
+public_folder: /Assets
+
+collections:
+  - name: "settings"
+    label: "Site Content"
+    files:
+      - name: "content"
+        label: "All Content"
+        file: "_data/content.json"
+        format: json
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subheadline", name: "subheadline", widget: "string", required: false }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "num", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Case Studies"
+            name: "caseStudies"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false, allow_multiple: false }
+              - { label: "URL", name: "url", widget: "string", required: false }
+              - { label: "Live URL", name: "liveUrl", widget: "string", required: false }
+              - { label: "Overview", name: "overview", widget: "text" }
+              - label: "Problem"
+                name: "problem"
+                widget: "object"
+                fields:
+                  - { label: "Intro", name: "intro", widget: "text" }
+                  - label: "Bullets"
+                    name: "bullets"
+                    widget: "list"
+                    field: { label: "Bullet", name: "bullet", widget: "string" }
+              - label: "Scale"
+                name: "scale"
+                widget: "list"
+                field: { label: "Scale Item", name: "item", widget: "string" }
+              - label: "Role"
+                name: "role"
+                widget: "list"
+                field: { label: "Role Item", name: "item", widget: "string" }
+              - label: "Challenges"
+                name: "challenges"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+              - label: "Approach"
+                name: "approach"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+              - { label: "Solution", name: "solution", widget: "text" }
+              - { label: "Flow", name: "flow", widget: "string", required: false }
+              - label: "Impact"
+                name: "impact"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "string" }
+              - label: "Takeaways"
+                name: "takeaways"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - label: "Roles"
+                name: "roles"
+                widget: "list"
+                fields:
+                  - { label: "Company", name: "company", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Duration", name: "duration", widget: "string" }
+              - label: "Education"
+                name: "education"
+                widget: "list"
+                fields:
+                  - { label: "Degree", name: "degree", widget: "string" }
+                  - { label: "School", name: "school", widget: "string" }
+
+          - label: "Principles"
+            name: "principles"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Status", name: "status", widget: "string" }
