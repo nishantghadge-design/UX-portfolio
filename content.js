@@ -631,6 +631,98 @@ window.SITE_CONTENT = {
         { title: "Speed changes the design process", desc: "When the gap between idea and implementation collapses, design becomes more fluid, more honest, and more iterative. Traditional design stage gates are challenged in meaningful ways." },
         { title: "AI requires direction, not just prompts", desc: "The quality of AI output depends entirely on the clarity of intent behind the input. Strong design thinking is what separates good AI-assisted products from mediocre ones." }
       ]
+    },
+
+    {
+      num: "08",
+      title: "Sign-In with mShop",
+      description: "Led UX design for a passwordless authentication initiative at Amazon — reducing friction, cutting $36M+ in annual SMS costs, and reimagining how millions of customers sign in using their existing Amazon Shopping app.",
+      tags: ["Consumer UX", "Authentication", "Security", "Experimentation"],
+      image: "",
+      url: "case-study.html?id=7",
+
+      overview: "Amazon's authentication ecosystem relied heavily on SMS-based OTP — creating customer friction and significant operational cost. I led UX design for Sign-In with mShop, a passwordless authentication system that leverages existing Amazon Shopping app sessions to let customers sign in via push notification and in-app confirmation. As part of the broader strategy, I also contributed to launching WhatsApp OTP — a near-zero-cost alternative to SMS that delivered $2M in annualized savings.",
+
+      problem: {
+        intro: "SMS-based authentication was deeply embedded across Amazon's sign-in experience — but it was expensive, fragile, and increasingly at odds with how customers actually used their devices.",
+        bullets: [
+          "$140.7M annual SMS cost in 2024 — a major and growing operational burden",
+          "Password fatigue and insecure reuse patterns across customer accounts",
+          "Context switching between devices to retrieve SMS OTPs created significant friction",
+          "High failure rates leading to account recovery flows and customer support contacts",
+          "Limited adoption of modern alternatives like Passkeys despite their availability"
+        ]
+      },
+
+      scale: [
+        "43.95% of Amazon customers actively use the Amazon Shopping app (mShop)",
+        "Push notification cost ~99.93% less per authentication than SMS",
+        "50% of traffic enrolled in active weblab experimentation",
+        "$103.9M SMS cost post-initiative — down from $140.7M (26% YoY reduction)",
+        "WhatsApp OTP launched globally, delivering $2M in annualized savings"
+      ],
+
+      role: [
+        "Led UX design for Sign-In with mShop end-to-end",
+        "Drove product strategy, interaction design, and experimentation design",
+        "Partnered with Business Risk Prevention, Customer Trust, and Engineering",
+        "Designed and validated multiple authentication flows through weblab testing",
+        "Contributed to broader authentication strategy including WhatsApp OTP launch"
+      ],
+
+      challenges: [
+        { title: "Security without friction", desc: "Replacing SMS required maintaining — and improving — security posture while simultaneously reducing the effort customers needed to authenticate. These goals often pull in opposite directions." },
+        { title: "Transitioning away from SMS", desc: "SMS was deeply embedded in customer expectations and internal systems. Replacing it required a careful progressive model — not a forced migration." },
+        { title: "Risk-based authentication design", desc: "High-risk sign-in scenarios required automatic fallback to stronger methods. The system had to be intelligent without exposing its logic or creating confusion." },
+        { title: "Adoption without enrollment", desc: "The new method had to work immediately for eligible customers — no opt-in, no setup, no new habit required. Leveraging existing mShop usage was key." },
+        { title: "Reliability across delivery paths", desc: "Push notifications can fail. The experience needed a robust fallback — in-app screen takeover — so authentication always completed reliably." }
+      ],
+
+      approach: [
+        { title: "Leverage Existing Behavior", body: "Rather than introducing a new authentication method that required learning, we built on a behavior customers already had — using the Amazon Shopping app daily. The mShop session became the authentication credential, invisible to the user." },
+        { title: "Progressive Authentication Model", body: "Designed a tiered system that prioritized the most secure and lowest-friction method available: Passkey → Password → Sign-In with mShop → OTP fallback. Users were guided naturally toward the best option without being overwhelmed by choice." },
+        { title: "Dual Delivery System", body: "Designed push notification + in-app screen takeover as complementary delivery paths — ensuring authentication completed reliably even when notifications were delayed or missed." },
+        { title: "Number Matching Challenge", body: "Added a lightweight verification step requiring customers to match a code between the sign-in screen and their app — preventing accidental approvals and account takeover attempts while keeping the experience fast." },
+        { title: "Experimentation-Driven Design", body: "Designed two variants tested against 50% of live traffic through weblab experimentation — measuring success rates, risk signals, and behavioral patterns to continuously refine the experience with real data." }
+      ],
+
+      solution: "A passwordless authentication system that lets customers sign in to Amazon using their existing Shopping app — delivered via push notification or in-app screen takeover, with number matching verification, risk-based fallback to OTP, and session-based eligibility filtering. Designed to be invisible, fast, and safe at scale.",
+      flow: "Email / Phone Entry → Method Selection → Push Notification or App Open → Number Match → Risk Evaluation → Access Granted",
+
+      impact: [
+        {
+          title: "Cost Reduction",
+          items: [
+            "SMS costs reduced from $140.7M to $103.9M — a 26% YoY reduction exceeding target",
+            "Push notification cost 99.93% less per authentication than SMS",
+            "WhatsApp OTP delivering $2M in annualized savings as complementary initiative"
+          ]
+        },
+        {
+          title: "Customer Experience",
+          items: [
+            "Eliminated device context switching — authentication stays in the app customers already use",
+            "Authentication completed in under 3 seconds via push notification",
+            "Familiar, app-native interaction model required no new customer behavior"
+          ]
+        },
+        {
+          title: "Security & Scale",
+          items: [
+            "Reduced reliance on SMS and passwords — both high-risk authentication vectors",
+            "Risk-based filtering ensures compromised or high-risk sessions fall back to OTP",
+            "Number matching prevents accidental approvals and reduces account takeover risk",
+            "50% of customer traffic enrolled in active weblab — with potential reach to 43.95% of active customers"
+          ]
+        }
+      ],
+
+      takeaways: [
+        { title: "The best authentication feels like nothing", desc: "When sign-in is built on behavior customers already have, it disappears into the background. Reducing visible effort is the highest-leverage UX improvement in authentication." },
+        { title: "Security and simplicity are not opposites", desc: "Number matching, risk-based fallback, and session validation all improved security — without adding friction for the vast majority of legitimate users." },
+        { title: "Experimentation is design at scale", desc: "At Amazon's volume, A/B testing isn't optional — it's the only honest way to validate UX decisions. Designing for testability is as important as designing the experience itself." },
+        { title: "Cost impact is a design outcome", desc: "A 26% reduction in SMS cost wasn't a byproduct of this initiative — it was a design goal. UX decisions directly drove business outcomes measurable in tens of millions of dollars." }
+      ]
     }
   ],
 
