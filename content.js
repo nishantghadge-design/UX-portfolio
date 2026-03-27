@@ -20,9 +20,10 @@ window.SITE_CONTENT = {
   caseStudies: [
     {
       num: "01",
+      featured: true,
       title: "Financial Onboarding for Business Launch",
       description: "Transformed financial onboarding from a 12-week bottleneck into a scalable, automated system — streamlining 1,200+ annual projects and eliminating 800K+ configurations per year.",
-      tags: ["Enterprise UX", "Systems Design", "Finance"],
+      tags: ["Finance", "Enterprise"],
       image: "",
       url: "case-study.html?id=0",
 
@@ -111,7 +112,7 @@ window.SITE_CONTENT = {
       num: "02",
       title: "End-to-End Balance Sheet Reconciliation",
       description: "Redesigned reconciliation workflows for systems processing 1.53T+ journal lines annually — replacing fragmented manual processes with a unified, scalable system that addressed 200K+ hours of manual effort per year.",
-      tags: ["Enterprise UX", "Workflow Design", "Finance"],
+      tags: ["Finance", "Enterprise"],
       image: "",
       url: "case-study.html?id=1",
 
@@ -196,7 +197,7 @@ window.SITE_CONTENT = {
       num: "03",
       title: "Reconciliation Insights & AI Agent Neo",
       description: "Designed an AI-powered Text-to-SQL system enabling 300+ monthly users to detect billion-dollar remittance failures and prevent millions in manual adjustments — without writing a single line of SQL.",
-      tags: ["AI/ML UX", "Conversational Design", "Finance"],
+      tags: ["Featured", "Finance", "Enterprise", "AI First"],
       image: "",
       url: "case-study.html?id=2",
 
@@ -282,7 +283,7 @@ window.SITE_CONTENT = {
       num: "04",
       title: "Finance Hub",
       description: "Unified Amazon's fragmented financial tools into a single platform — connecting onboarding, reconciliation, and AI insights across systems handling 1.53T+ journal lines and 6.5M configurations annually.",
-      tags: ["Platform Design", "Enterprise UX", "Finance"],
+      tags: ["Finance", "Enterprise"],
       image: "",
       url: "case-study.html?id=3",
 
@@ -369,9 +370,10 @@ window.SITE_CONTENT = {
 
     {
       num: "05",
+      featured: true,
       title: "Amazon Locker Accessibility",
       description: "Redesigned the Amazon Locker kiosk and digital experience to be fully accessible — improving pickup and return flows for customers with visual, motor, and cognitive disabilities across thousands of locations worldwide.",
-      tags: ["Accessibility", "Customer Experience", "Retail"],
+      tags: ["Retail", "Physical"],
       image: "",
       url: "case-study.html?id=4",
 
@@ -460,7 +462,7 @@ window.SITE_CONTENT = {
       num: "06",
       title: "Amazon Locker Redirects & Delivery Recovery",
       description: "Designed the delivery recovery experience for Amazon Lockers — enabling customers to redirect failed or at-risk deliveries to nearby Locker locations, improving delivery success rates and customer satisfaction at scale.",
-      tags: ["Customer Experience", "Logistics UX", "Retail"],
+      tags: ["Featured", "Retail", "Physical"],
       image: "",
       url: "case-study.html?id=5",
 
@@ -549,7 +551,7 @@ window.SITE_CONTENT = {
       num: "07",
       title: "ManchQ — AI-Native SaaS for Dance Class Management",
       description: "A curiosity-driven experiment in AI-first product development — designing and building ManchQ, a fully functional SaaS platform for dance schools, end-to-end using AI-assisted workflows. Live at ManchQ.com.",
-      tags: ["AI-First Design", "SaaS", "Personal Project"],
+      tags: ["Passion Project", "AI First"],
       image: "",
       url: "case-study.html?id=6",
       liveUrl: "https://manchq.com",
@@ -635,9 +637,10 @@ window.SITE_CONTENT = {
 
     {
       num: "08",
+      featured: true,
       title: "Sign-In with mShop",
       description: "Led UX design for a passwordless authentication initiative at Amazon — reducing friction, cutting $36M+ in annual SMS costs, and reimagining how millions of customers sign in using their existing Amazon Shopping app.",
-      tags: ["Consumer UX", "Authentication", "Security", "Experimentation"],
+      tags: ["Featured", "Retail", "Enterprise", "AI First"],
       image: "",
       url: "case-study.html?id=7",
 

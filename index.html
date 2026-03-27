@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
 <title>Nishant Ghadge — UX Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="main.css" />
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
@@ -22,16 +22,34 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Nishant Ghadge</a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#principles">Principles</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-mobile-toggle" aria-label="Toggle menu" id="menuToggle">
-      <span></span><span></span>
-    </button>
+    <div class="nav-left">
+      <a href="#hero" class="nav-logo">Nishant Ghadge</a>
+      <div class="nav-divider"></div>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <div class="toggle-thumb">
+          <svg class="toggle-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="toggle-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" id="menuToggle">
+        <span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -46,88 +64,99 @@
 </div>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-left reveal">
-    <div class="hero-label">Senior UX Designer</div>
-    <h1 class="hero-headline">
-      I design systems that simplify
-      <em>complex, real-world problems</em>
-      at global scale.
-    </h1>
-    <a href="#work" class="hero-cta">View selected work →</a>
-  </div>
-  <div class="hero-right reveal" style="transition-delay:0.15s">
-    <p class="hero-intro">
-      Senior UX Designer at Amazon with 20+ years of experience — designing enterprise platforms and customer-facing products used by millions worldwide. My work spans delivery, logistics, and financial systems, transforming complex workflows into intuitive, human-centered experiences. I collaborate closely with cross-functional partners, have led and mentored designers throughout my career, and actively apply AI to build more efficient, scalable solutions.
-    </p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Years experience</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">13+</div><div class="hero-stat-label">Years at Amazon</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">M+</div><div class="hero-stat-label">Users impacted</div></div>
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Senior UX Designer · Amazon · Seattle, WA</div>
+    <div class="hero-name">Nishant Ghadge</div>
+    <h1 class="hero-headline">I design systems that simplify <em>complex, real-world</em> problems at global scale.</h1>
+    <div class="hero-divider"></div>
+    <div class="hero-bottom">
+      <p class="hero-intro">Senior UX Designer at Amazon with 20+ years of experience. My work spans delivery, logistics, and financial systems, transforming complex workflows into intuitive, human-centered experiences.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Work ↗</a>
+        <a href="#about" class="btn-secondary">About Me</a>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<!-- STATS -->
+<section class="stats-section" id="stats">
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <div class="stat-cell-accent"></div>
+      <div class="stat-row"><span class="stat-number">20</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Years of experience</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-accent"></div>
+      <div class="stat-row"><span class="stat-number">13</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Years at Amazon</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-accent"></div>
+      <div class="stat-row"><span class="stat-number">M</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Users impacted globally</div>
+    </div>
+  </div>
+</section>
 
 <!-- WORK -->
-<section id="work">
-  <div class="section-header reveal">
-    <div>
-      <div class="section-label">Selected Work</div>
-      <h2 class="section-title">Case Studies</h2>
+<section class="work-section" id="work">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-left">
+        <span class="section-title">Case Studies</span>
+      </div>
+      <div class="cs-filter-bar" id="cs-filter-bar">
+        <!-- Injected by main.js -->
+      </div>
     </div>
-    <span class="section-count" id="cs-count">3 projects</span>
-  </div>
-  <div class="case-studies" id="case-studies-list">
-    <!-- Injected by JS from content/case-studies -->
+    <div class="mosaic" id="case-studies-list">
+      <!-- Injected by main.js -->
+    </div>
   </div>
 </section>
-
-<div class="section-divider"></div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-left reveal">
-      <div class="section-label about-label">About</div>
-      <h2 class="about-headline">Designing for complexity<br>is a <em>discipline</em>.</h2>
-      <div class="about-body" id="about-body">
-        <!-- Injected by JS -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="about-label">About</div>
+        <h2 class="about-headline">Designing for complexity<br>is a <em>discipline</em>.</h2>
+        <div class="about-body" id="about-body">
+          <!-- Injected by JS -->
+        </div>
       </div>
-    </div>
-    <div class="about-right reveal" style="transition-delay:0.15s">
-      <div class="about-photo-wrap">
-        <img src="Assets/Nishant Ghadge.jpg" alt="Nishant Ghadge" class="about-photo" />
+      <div class="about-right reveal" style="transition-delay:0.15s">
+        <div class="about-photo-wrap">
+          <img src="Assets/Nishant Ghadge.jpg" alt="Nishant Ghadge" class="about-photo" />
+        </div>
+        <div class="about-roles" id="about-roles"><!-- Injected by JS --></div>
+        <div class="about-edu" id="about-edu"><!-- Injected by JS --></div>
       </div>
-      <div class="about-roles" id="about-roles"><!-- Injected by JS --></div>
-      <div class="about-edu" id="about-edu"><!-- Injected by JS --></div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
 <!-- PRINCIPLES -->
-<section id="principles">
-  <div class="container">
+<section class="principles-section" id="principles">
+  <div class="section-inner">
     <div class="section-header reveal" style="padding:0">
-      <div>
-        <div class="section-label">Philosophy</div>
-        <h2 class="section-title">How I think about design</h2>
+      <div class="section-left">
+        <span class="section-title">Design Principles</span>
       </div>
     </div>
   </div>
   <div class="principles-grid" id="principles-grid"><!-- Injected by JS --></div>
 </section>
 
-<div class="section-divider"></div>
-
 <!-- CONTACT -->
-<section id="contact">
+<section class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="reveal">
-      <div class="section-label contact-label">Contact</div>
+      <div class="contact-label">Contact</div>
       <h2 class="contact-headline">Let's talk design.</h2>
       <p class="contact-sub">I'm always interested in conversations about design, systems thinking, and building meaningful products.</p>
     </div>
@@ -137,10 +166,22 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-name">Nishant Ghadge</span>
-  <span class="footer-note">Senior UX Designer · Seattle, WA · <span id="footer-year"></span></span>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-name">Nishant Ghadge</span>
+      <div class="footer-sep"></div>
+      <span class="footer-role">Senior UX Designer · Amazon · Seattle, WA · <span id="footer-year"></span></span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </footer>
 
+<script src="content.js"></script>
 <script src="main.js"></script>
 <script>
   if (window.netlifyIdentity) {

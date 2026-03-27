@@ -4,13 +4,8 @@
 
 let C = {};
 
-async function loadContent() {
-  try {
-    const res = await fetch('/_data/content.json');
-    C = await res.json();
-  } catch(e) {
-    C = window.SITE_CONTENT || {};
-  }
+function loadContent() {
+  C = window.SITE_CONTENT || {};
   initAll();
 }
 
@@ -21,45 +16,104 @@ function initAll() {
   renderContact();
   setYear();
 
-  // Hero reveals immediately
   setTimeout(() => {
-    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
     initReveal();
   }, 80);
 
   initNav();
   initMobileMenu();
-  initCyclingText();
+  initThemeToggle();
 }
 
-// ── RENDER CASE STUDIES ──
+// ── THEME TOGGLE ──
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('portfolio-theme');
+  if (saved) html.setAttribute('data-theme', saved);
+
+  themeToggle?.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('portfolio-theme', next);
+  });
+}
+
+// ── TILE BACKGROUND CLASSES ──
+const TILE_BG_CLASSES = [
+  'tile-bg-0',
+  'tile-bg-1',
+  'tile-bg-2',
+  'tile-bg-3',
+  'tile-bg-4',
+  'tile-bg-5',
+  'tile-bg-6',
+  'tile-bg-7'
+];
+
+// ── RENDER CASE STUDIES (MOSAIC) ──
+let activeFilter = 'Featured';
+
 function renderCaseStudies() {
-  const list = document.getElementById('case-studies-list');
-  const count = document.getElementById('cs-count');
+  const list      = document.getElementById('case-studies-list');
+  const filterBar = document.getElementById('cs-filter-bar');
+  const countEl   = document.getElementById('cs-count');
   if (!list || !C.caseStudies) return;
 
-  count.textContent = C.caseStudies.length + ' projects';
+  // Fixed ordered tag list
+  const allTags = ['All', 'Featured', 'Finance', 'Retail', 'Enterprise', 'Passion Project', 'Physical', 'AI First'];
 
-  list.innerHTML = C.caseStudies.map((cs, i) => `
-    <a href="${cs.url}" class="case-study-row reveal" style="transition-delay:${i * 0.1}s">
-      <div class="cs-num">${cs.num}</div>
-      <div class="cs-body">
-        <div class="cs-tags">
-          ${cs.tags.map(t => `<span class="cs-tag">${t}</span>`).join('')}
+  // Render filter pills
+  if (filterBar) {
+    filterBar.innerHTML = allTags.map(tag => `
+      <button class="cs-filter-pill${tag === activeFilter ? ' active' : ''}" data-filter="${tag}">${tag}</button>
+    `).join('');
+    filterBar.querySelectorAll('.cs-filter-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.filter;
+        filterBar.querySelectorAll('.cs-filter-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter();
+      });
+    });
+  }
+
+  applyFilter();
+
+  function applyFilter() {
+    const filtered = activeFilter === 'All'
+      ? C.caseStudies
+      : C.caseStudies.filter(cs => cs.tags.includes(activeFilter));
+
+    if (countEl) countEl.textContent = filtered.length;
+
+    list.innerHTML = filtered.map((cs, i) => {
+      const bgClass = TILE_BG_CLASSES[i % TILE_BG_CLASSES.length];
+      const hasGlow = i === 0;
+      return `<a href="${cs.url}" class="tile tile-pos-${i} ${bgClass}">
+        <div class="tile-bg"></div>
+        <div class="tile-scrim"></div>
+        ${hasGlow ? '<div class="tile-glow"></div>' : ''}
+        <div class="tile-content">
+          <span class="tile-num">${cs.num}</span>
+          <div class="tile-tags">
+            ${cs.tags.map(t => `<span class="tile-tag">${t}</span>`).join('')}
+          </div>
+          <div class="tile-title">${cs.title}</div>
+          <div class="tile-desc">${cs.description}</div>
+          <div class="tile-arrow">↗</div>
         </div>
-        <h3 class="cs-title">${cs.title}</h3>
-        <p class="cs-desc">${cs.description}</p>
-      </div>
-      <div class="cs-image">
-        <div class="cs-placeholder">
-          ${cs.image
-            ? `<img src="${cs.image}" alt="${cs.title}" loading="lazy" />`
-            : `<span class="cs-placeholder-label">Visuals coming soon</span>`
-          }
-        </div>
-      </div>
-    </a>
-  `).join('');
+      </a>`;
+    }).join('');
+
+    // Fade in
+    list.style.opacity = '0';
+    requestAnimationFrame(() => {
+      list.style.transition = 'opacity 0.25s ease';
+      list.style.opacity    = '1';
+    });
+  }
 }
 
 // ── RENDER ABOUT ──
@@ -177,58 +231,6 @@ function initMobileMenu() {
       document.body.style.overflow = '';
     });
   });
-}
-
-// ── TYPEWRITER ──
-function initCyclingText() {
-  const el = document.getElementById('heroTypewriter');
-  if (!el) return;
-
-  const words = [
-    'systems',
-    'financial tools',
-    'enterprise platforms',
-    'delivery experiences',
-    'AI workflows',
-    'end-to-end products'
-  ];
-
-  let wordIndex  = 0;
-  let charIndex  = 0;
-  let deleting   = false;
-  const typeSpeed   = 75;
-  const deleteSpeed = 40;
-  const holdPause   = 1800;
-  const nextPause   = 300;
-
-  function tick() {
-    const current = words[wordIndex];
-
-    if (!deleting) {
-      // Typing
-      charIndex++;
-      el.textContent = current.slice(0, charIndex);
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(tick, holdPause);
-        return;
-      }
-    } else {
-      // Deleting
-      charIndex--;
-      el.textContent = current.slice(0, charIndex);
-      if (charIndex === 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(tick, nextPause);
-        return;
-      }
-    }
-
-    setTimeout(tick, deleting ? deleteSpeed : typeSpeed);
-  }
-
-  tick();
 }
 
 // ── FOOTER YEAR ──

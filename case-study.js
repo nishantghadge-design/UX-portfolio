@@ -4,13 +4,8 @@
 
 let C = {};
 
-async function loadContent() {
-  try {
-    const res = await fetch('/_data/content.json');
-    C = await res.json();
-  } catch(e) {
-    C = window.SITE_CONTENT || {};
-  }
+function loadContent() {
+  C = window.SITE_CONTENT || {};
   renderPage();
 }
 
@@ -47,23 +42,24 @@ function renderPage() {
   document.getElementById('cs-content').innerHTML = buildContent(cs);
 
   // Pagination
-  const prev = idx > 0          ? C.caseStudies[idx - 1] : null;
-  const next = idx < total - 1  ? C.caseStudies[idx + 1] : null;
+  const prevIdx = idx > 0         ? idx - 1 : total - 1;
+  const nextIdx = idx < total - 1 ? idx + 1 : 0;
+  const prev = C.caseStudies[prevIdx];
+  const next = C.caseStudies[nextIdx];
   document.getElementById('cs-pagination').innerHTML =
     '<div class="cs-pagination-inner">' +
-      (prev
-        ? '<a href="case-study.html?id=' + (idx - 1) + '" class="cs-pag-link cs-pag-prev">' +
-            '<span class="cs-pag-dir">← Previous</span>' +
-            '<span class="cs-pag-title">' + prev.title + '</span>' +
-          '</a>'
-        : '<div class="cs-pag-link cs-pag-empty"></div>') +
-      (next
-        ? '<a href="case-study.html?id=' + (idx + 1) + '" class="cs-pag-link cs-pag-next">' +
-            '<span class="cs-pag-dir">Next →</span>' +
-            '<span class="cs-pag-title">' + next.title + '</span>' +
-          '</a>'
-        : '<div class="cs-pag-link cs-pag-empty"></div>') +
+      '<a href="case-study.html?id=' + prevIdx + '" class="cs-pag-link cs-pag-prev">' +
+        '<span class="cs-pag-dir">← Previous</span>' +
+        '<span class="cs-pag-title">' + prev.title + '</span>' +
+      '</a>' +
+      '<a href="case-study.html?id=' + nextIdx + '" class="cs-pag-link cs-pag-next">' +
+        '<span class="cs-pag-dir">Next →</span>' +
+        '<span class="cs-pag-title">' + next.title + '</span>' +
+      '</a>' +
     '</div>';
+
+  // Theme toggle
+  initThemeToggle();
 
   // Scroll reveal
   initReveal();
@@ -143,7 +139,7 @@ function buildContent(cs) {
       : '')
   );
 
-  // Impact (dark section)
+  // Impact (always dark section)
   html +=
     '<div class="cs-section cs-impact-section cs-reveal">' +
       '<div class="cs-section-inner">' +
@@ -188,6 +184,21 @@ function section(label, inner) {
   '</div>';
 }
 
+// ── THEME TOGGLE ──
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('portfolio-theme');
+  if (saved) html.setAttribute('data-theme', saved);
+
+  themeToggle?.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('portfolio-theme', next);
+  });
+}
+
+// ── SCROLL REVEAL ──
 function initReveal() {
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
